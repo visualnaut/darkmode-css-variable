@@ -1,0 +1,81 @@
+:root {
+  --background-color: #fff;
+  --title-color: #151515;
+  --subtitle-color: #353535;
+  --image-brightness: 100%;
+  --transition-duration: .5s;
+}
+
+[data-theme="dark"] {
+  --background-color: #00030f;
+  --title-color: #fff;
+  --subtitle-color: #ffffffdd;
+  --image-brightness: 60%;
+}
+
+body {
+  background: var(--background-color);
+  -webkit-transition: background var(--transition-duration) ease-in-out;
+  transition: background var(--transition-duration) ease-in-out;
+}
+
+#main-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+#main-wrapper .container {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main-wrapper .container .content-wrapper {
+  padding-left: 60px;
+}
+
+#main-wrapper .container .content-wrapper .title {
+  font-family: 'Georgia';
+  font-weight: 900;
+  font-size: 62px;
+  color: var(--title-color);
+  -webkit-transition: color var(--transition-duration) ease-in-out;
+  transition: color var(--transition-duration) ease-in-out;
+}
+
+#main-wrapper .container .content-wrapper .subtitle {
+  font-family: 'Arial';
+  font-size: 18px;
+  letter-spacing: .025em;
+  line-height: 24px;
+  color: var(--subtitle-color);
+  -webkit-transition: color var(--transition-duration) ease-in-out;
+  transition: color var(--transition-duration) ease-in-out;
+}
+
+#main-wrapper .container .content-wrapper .toggle {
+  padding: 8px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: var(--subtitle-color);
+  color: var(--background-color);
+  -webkit-transition: all var(--transition-duration) ease-in-out;
+  transition: all var(--transition-duration) ease-in-out;
+}
+
+#main-wrapper .container .image-wrapper img {
+  width: 400px;
+  height: 400px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-filter: brightness(var(--image-brightness));
+  filter: brightness(var(--image-brightness));
+  -webkit-transition: filter var(--transition-duration) ease-in-out;
+  transition: filter var(--transition-duration) ease-in-out;
+}
