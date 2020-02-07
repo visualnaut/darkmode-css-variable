@@ -2,8 +2,8 @@
 window.onload = (event) => {
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
   // First check on color scheme based on user session storage
-  if(sessionStorage.getItem('theme') === 'dark' || 'light')
-    changeTheme(sessionStorage.getItem('theme'))
+  if(localStorage.getItem('theme') === 'dark' || 'light')
+    changeTheme(localStorage.getItem('theme'))
   else {
     if(mediaQuery.matches)
       changeTheme('dark')
@@ -31,5 +31,5 @@ function toggleTheme() {
 // Function to change the theme
 function changeTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)
-  sessionStorage.setItem('theme', theme) // Set user theme on session storage
+  localStorage.setItem('theme', theme) // Set user theme on session storage
 }
