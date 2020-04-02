@@ -1,7 +1,7 @@
 // This will called when the site is loaded
 window.onload = (event) => {
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-  // First check on color scheme based on user session storage
+  // First check on color scheme based on user local storage
   if(localStorage.getItem('theme') === 'dark' || 'light')
     changeTheme(localStorage.getItem('theme'))
   else {
@@ -31,5 +31,5 @@ function toggleTheme() {
 // Function to change the theme
 function changeTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('theme', theme) // Set user theme on session storage
+  localStorage.setItem('theme', theme) // Set user theme on local storage
 }
